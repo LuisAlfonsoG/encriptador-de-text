@@ -9,6 +9,7 @@
 
 const input = document.getElementById("input");
 const botonEncriptador = document.getElementById("boton-encriptador");
+const botonDesencriptador = document.getElementById("boton-desencriptador");
 const output = document.getElementById("output");
 
 const map = {
@@ -20,20 +21,38 @@ const map = {
 };
 
 function encriptar(texto){
-  let msgEncriptado = "";
 
+  let msjEncriptado = "";
+  
   let keys = Object.keys(map);
   for(let s of texto){
     if(keys.includes(s)){
-      msgEncriptado += map[s];
+      msjEncriptado += map[s];
     } else {
-      msgEncriptado += s;
+      msjEncriptado += s;
     }
   }
+  
+  return msjEncriptado;
+}
 
-  return msgEncriptado;
+function desencriptar(texto){
+  let msjDesencriptado = texto;
+
+  let keys = Object.keys(map);
+  for(let key of keys){
+    msjDesencriptado = msjDesencriptado.replaceAll(map[key], key);
+  }
+
+  return msjDesencriptado;
 }
 
 botonEncriptador.onclick = () => {
-  output.innerText = encriptar(input.value);
+  let text = input.value;
+  output.innerText = encriptar(text);
+}
+
+botonDesencriptador.onclick = () => {
+  let text = input.value;
+  output.innerText = desencriptar(text);
 }
