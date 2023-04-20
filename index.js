@@ -11,6 +11,7 @@ const input = document.getElementById("input");
 const botonEncriptador = document.getElementById("boton-encriptador");
 const botonDesencriptador = document.getElementById("boton-desencriptador");
 const output = document.getElementById("output");
+const copy = document.getElementById("copy");
 
 const map = {
   e: "enter",
@@ -21,7 +22,6 @@ const map = {
 };
 
 function encriptar(texto){
-
   let msjEncriptado = "";
   
   let keys = Object.keys(map);
@@ -47,6 +47,12 @@ function desencriptar(texto){
   return msjDesencriptado;
 }
 
+function copiarTexto(){
+  navigator.clipboard
+    .writeText(output.innerText)
+      .then(() => {});
+}
+
 botonEncriptador.onclick = () => {
   let text = input.value;
   output.innerText = encriptar(text);
@@ -56,3 +62,5 @@ botonDesencriptador.onclick = () => {
   let text = input.value;
   output.innerText = desencriptar(text);
 }
+
+copy.onclick = copiarTexto;
