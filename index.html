@@ -11,31 +11,46 @@
 <body>
   <header>
     <!--- logo -->
-    <img src="images/Vector.svg" alt="alura logo">
+    <img id="alura-logo" src="images/Vector.svg" alt="alura logo">
   </header>
   
   <section class="main">
     <div id="seccion-encriptadora">
       <form>
-        <input id="input" type="text" placeholder="Inserta tu texto"/>
+        <textarea id="input" placeholder="Ingrese el texto aquí"></textarea>
       </form>
       <div class="controles">
         <div id="consideraciones">
           <img src="images/exclamation-circle.svg" alt="!"> <span>Solo letras minúsculas y sin acentos</span>
         </div>
         <div class="botones">
-          <button id="boton-encriptador">encriptar</button>
-          <button id="boton-desencriptador">desencriptar</button>
+          <button id="boton-encriptador">Encriptar</button>
+          <button id="boton-desencriptador">Desencriptar</button>
         </div>
       </div>
     </div>
 
     <div class="seccion-output">
-      <p id="output"></p>
-      <button id="copy">copiar</button>
+      <div id="contenido-default">
+        <div class="mensaje-default">
+          <h1>Ningún mensaje fue encontrado</h1>
+          <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        </div>
+        <div class="imagen-default">
+          <img src="images/Muñeco.svg">
+        </div>
+      </div>
+      <div id="output-container">
+        <div id="output"></div>
+      </div>
+      <button class="hide" id="boton-copiar">Copiar</button>
     </div>
 
   </section>
+
+  <footer>
+
+  </footer>
 
   
   <script src="index.js"></script>
