@@ -37,7 +37,7 @@ header{
   margin-top: 1rem;
 }
 
-section.main{
+section.encriptador{
   margin-top: 5rem;
 }
 
@@ -147,10 +147,6 @@ button{
   overflow-wrap: break-word;
 }
 
-.hide{
-  display: none;
-}
-
 @media (min-width: 760px){
   header, section, footer{
     margin: 0 2rem;
@@ -158,7 +154,7 @@ button{
 
   header{ margin-top: 2rem; }
 
-  section.main{
+  section.encriptador{
     margin-top: 7rem;
   }
 
@@ -172,4 +168,68 @@ button{
   #boton-desencriptador{
     width: 100%;
   }
+}
+
+@media (min-width: 1200px){
+  body{
+    display: grid;
+    grid-template-areas: "header output" "encriptador output";
+  }
+
+  header{
+    grid-area: header;
+    margin-top: 2.5rem;
+    margin-left: 5rem;
+  }
+
+  section.encriptador{
+    grid-area: encriptador;
+    margin-left: 15vw;
+    margin-top: 5rem;
+    height: 70vh;
+    width: 50vw;
+  }
+
+  #seccion-encriptadora{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+  }
+
+  form{
+    height: 50vh;
+  }
+
+  div.botones{
+    margin-bottom: 2.5rem;
+  }
+
+  section.seccion-output{
+    grid-area: output;
+    margin: 0;
+    margin-right: 2.5rem;
+    margin-top: 2.5rem;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #contenido-default{ height: 100%; }
+  #contenido-default .contenedor{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #contenido-default .imagen-default{
+    display: block;
+  }
+}
+
+.hide{
+  display: none;
 }
